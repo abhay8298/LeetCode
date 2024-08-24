@@ -1,0 +1,22 @@
+TC = O(n^2)
+class Solution {
+    public int reverse(int x) {
+        int ans = 0;
+        while(x != 0){
+            int rem = x%10;
+            if(ans > Integer.MAX_VALUE /10 || ans < Integer.MIN_VALUE /10){
+                return 0;
+            }
+            ans = (ans * 10) + rem;
+            x/=10;
+        }
+        // if(!flag){
+        //     ans = ans * -1;
+        // }
+        // if(ans > (Math.pow(2,31) - 1) || ans < (Math.pow(2,31) * -1)){
+        //     ans = 0;
+        // }
+        return ans;
+        
+    }
+}
